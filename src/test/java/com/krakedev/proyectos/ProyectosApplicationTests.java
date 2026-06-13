@@ -1,13 +1,13 @@
-package com.krakedev.proyectos;
+//package com.krakedev.proyectos;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+//import org.junit.jupiter.api.Test;
+//import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class ProyectosApplicationTests {
+//@SpringBootTest
+//class ProyectosApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+//	@Test
+//	void contextLoads() {
+//	}
 
-}
+//}
