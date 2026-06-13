@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,7 +28,7 @@ public class ProyectoController {
 	private ProyectoService pService;
 	
 	@PostMapping
-
+	@PreAuthorize("hasRole('ADMIN')")
 	public ResponseEntity<?> insertar(@RequestBody Proyecto proyecto) {
         try {
         	Proyecto creado = pService.insertar(proyecto);
@@ -38,6 +39,7 @@ public class ProyectoController {
 	}
 	
 	@GetMapping
+	@PreAuthorize("hasAnyRole('ADMIN','USER')")
     public ResponseEntity<?> listarTodos() {
 		try {
 			List<Proyecto> proyectos =pService.listarTodos();
@@ -78,6 +80,7 @@ public class ProyectoController {
 	
 	
 	@DeleteMapping("/{id}")
+	@PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> eliminar(@PathVariable Integer id) {
 		try {
 			boolean eliminado = pService.eliminar(id);
