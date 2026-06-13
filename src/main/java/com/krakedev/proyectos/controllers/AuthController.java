@@ -4,11 +4,14 @@ import java.util.Map;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.auth0.jwt.interfaces.DecodedJWT;
 import com.krakedev.proyectos.entidades.Usuario;
 import com.krakedev.proyectos.security.JwtUtil;
 import com.krakedev.proyectos.services.TokenBlacklistService;
@@ -52,6 +55,62 @@ public class AuthController {
 		} catch (RuntimeException e) {
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Usuario o contraseña incorrecta");
 		}
+	}
+	
+	@GetMapping("/perfil")
+	public ResponseEntity<?> perfil(@RequestHeader(value="Authorization", required = false) String authHeader){
+		try{
+			if(authHeader == null || !authHeader.startsWith("Bearer ")) {
+				return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+						.body("Acceso Denegado: Debe proveer un token Bearer valido en la cebecera Authorization");
+			}
+			String token = authHeader.substring(7);
+			
+			DecodedJWT datosToken = JwtUtil.validarToken(token);
+			
+			if(datosToken ==null) {
+				return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Acceso Denegado: Token invalido o expirado" );
+			}
+			
+			String usuario = datosToken.getSubject();
+			String rol = datosToken.getClaim("rol").asString();
+			
+			if ("ADMIN".equals(rol)) {
+				return ResponseEntity.ok(Map.of(
+						"Mensaje", "Bienvenido al sistema del refugio de mascotas - Eres Administrador", 
+						"Usuario", usuario,
+						"Rol", rol,
+						"Estatus", "Autenticado Existosamente"
+						));	
+			}else if("USER".equals(rol)){
+				return ResponseEntity.ok(Map.of(
+						"Mensaje", "Bienvenido al sistema del refugio de mascotas - Eres Usuario con permisos basicos", 
+						"Usuario", usuario,
+						"Rol", rol,
+						"Estatus", "Autenticado Existosamente"
+						));	
+			}else {
+				return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Rol no autorizado a acceder a este modulo");
+			}
+		} catch (Exception e) {
+			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Token invalido o expirado");
+		}
+	}
+	
+	@PostMapping("/logout")
+	public ResponseEntity<?> logout(@RequestHeader(value="Authorization", required = false) String authHeader){
+		if(authHeader != null && authHeader.startsWith("Bearer ")) {
+			String token = authHeader.substring(7);
+			DecodedJWT datosToken = JwtUtil.validarToken(token);
+			if(datosToken == null) {
+				return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Token invalido o expirado");
+			}
+			blacklistService.invalidarToken(token);
+			return ResponseEntity.ok(Map.of("Mensaje", "Sesion cerrada exitosamete: Token invalidado"));
+		}else {
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Token no proporcionado");
+		}
+		
 	}
 	
 }
