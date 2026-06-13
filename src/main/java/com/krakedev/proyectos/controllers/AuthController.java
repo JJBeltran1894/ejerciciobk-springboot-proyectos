@@ -4,6 +4,8 @@ import java.util.Map;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -59,21 +61,10 @@ public class AuthController {
 	
 	@GetMapping("/perfil")
 	public ResponseEntity<?> perfil(@RequestHeader(value="Authorization", required = false) String authHeader){
-		try{
-			if(authHeader == null || !authHeader.startsWith("Bearer ")) {
-				return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-						.body("Acceso Denegado: Debe proveer un token Bearer valido en la cebecera Authorization");
-			}
-			String token = authHeader.substring(7);
+			Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 			
-			DecodedJWT datosToken = JwtUtil.validarToken(token);
-			
-			if(datosToken ==null) {
-				return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Acceso Denegado: Token invalido o expirado" );
-			}
-			
-			String usuario = datosToken.getSubject();
-			String rol = datosToken.getClaim("rol").asString();
+			String usuario = auth.getName();
+			String rol = auth.getAuthorities().iterator().next().getAuthority();
 			
 			if ("ADMIN".equals(rol)) {
 				return ResponseEntity.ok(Map.of(
@@ -92,9 +83,7 @@ public class AuthController {
 			}else {
 				return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Rol no autorizado a acceder a este modulo");
 			}
-		} catch (Exception e) {
-			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Token invalido o expirado");
-		}
+
 	}
 	
 	@PostMapping("/logout")
