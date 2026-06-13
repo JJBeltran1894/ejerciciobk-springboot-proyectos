@@ -1,0 +1,694 @@
+{
+  "info": {
+    "_postman_id": "e7a5fae1-0993-49a6-abba-0b9e1a422e15",
+    "name": "Proyectos Securizado",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "46396249"
+  },
+  "item": [
+    {
+      "name": "Proyectos",
+      "item": [
+        {
+          "name": "post proyectos",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJLcmFrZURldkJhY2tlbmQiLCJzdWIiOiJXaWxseXJleDIzMDUiLCJpYXQiOjE3ODEzOTI1MjQsImV4cCI6MTc4MTM5NDMyNCwicm9sIjoiVVNFUiJ9.O9T8yi4AkuVrjWvr-CpCltRJe4SVsqeHi2acBhMv5Bo",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"E-Commerce Plataforma 88\",\r\n    \"descripcion\": \"Desarrollo del nuevo portal de ventas online de nuevo\",\r\n    \"fechaInicio\": \"2026-05-20\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/proyectos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "proyectos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get proyectos listar",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJLcmFrZURldkJhY2tlbmQiLCJzdWIiOiJXaWxseXJleDIzMDUiLCJpYXQiOjE3ODEzOTI1MjQsImV4cCI6MTc4MTM5NDMyNCwicm9sIjoiVVNFUiJ9.O9T8yi4AkuVrjWvr-CpCltRJe4SVsqeHi2acBhMv5Bo",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/proyectos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "proyectos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get proyectos por id",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJLcmFrZURldkJhY2tlbmQiLCJzdWIiOiJXaWxseXJleDIzMDUiLCJpYXQiOjE3ODEzOTI1MjQsImV4cCI6MTc4MTM5NDMyNCwicm9sIjoiVVNFUiJ9.O9T8yi4AkuVrjWvr-CpCltRJe4SVsqeHi2acBhMv5Bo",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/proyectos/6",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "proyectos",
+                "6"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "eliminar proyecto",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJLcmFrZURldkJhY2tlbmQiLCJzdWIiOiJXaWxseXJleDIzMDUiLCJpYXQiOjE3ODEzODA4NzksImV4cCI6MTc4MTM4MjY3OSwicm9sIjoiVVNFUiJ9.5XEU9IS09zacA97_5ujeoOwT2lNboSrWOtzLxEalwbo",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/proyectos/3",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "proyectos",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "actualizar proyectos Copy",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJLcmFrZURldkJhY2tlbmQiLCJzdWIiOiJXaWxseXJleDIzMDUiLCJpYXQiOjE3ODEzOTI1MjQsImV4cCI6MTc4MTM5NDMyNCwicm9sIjoiVVNFUiJ9.O9T8yi4AkuVrjWvr-CpCltRJe4SVsqeHi2acBhMv5Bo",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"E-Commerce Plataforma - modificado xxx\",\r\n    \"descripcion\": \"Desarrollo del nuevo portal de ventas online - modificado\",\r\n    \"fechaInicio\": \"2026-05-20\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/proyectos/5",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "proyectos",
+                "5"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Empleados",
+      "item": [
+        {
+          "name": "post empleado",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJLcmFrZURldkJhY2tlbmQiLCJzdWIiOiJXaWxseXJleDIzMDUiLCJpYXQiOjE3ODEzOTI1MjQsImV4cCI6MTc4MTM5NDMyNCwicm9sIjoiVVNFUiJ9.O9T8yi4AkuVrjWvr-CpCltRJe4SVsqeHi2acBhMv5Bo",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"Alberto Reyes5\",\r\n    \"cargo\": \"Desarrollador Junnior\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/empleados",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "empleados"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "actualizar empleado",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJLcmFrZURldkJhY2tlbmQiLCJzdWIiOiJXaWxseXJleDIzMDUiLCJpYXQiOjE3ODEzOTI1MjQsImV4cCI6MTc4MTM5NDMyNCwicm9sIjoiVVNFUiJ9.O9T8yi4AkuVrjWvr-CpCltRJe4SVsqeHi2acBhMv5Bo",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"Diana Romina Rojas Arias\",\r\n    \"cargo\": \"Desarrollador Senior\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/empleados/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "empleados",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get empleados",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJLcmFrZURldkJhY2tlbmQiLCJzdWIiOiJXaWxseXJleDIzMDUiLCJpYXQiOjE3ODEzOTI1MjQsImV4cCI6MTc4MTM5NDMyNCwicm9sIjoiVVNFUiJ9.O9T8yi4AkuVrjWvr-CpCltRJe4SVsqeHi2acBhMv5Bo",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/empleados",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "empleados"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get empleados por id",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJLcmFrZURldkJhY2tlbmQiLCJzdWIiOiJXaWxseXJleDIzMDUiLCJpYXQiOjE3ODEzOTI1MjQsImV4cCI6MTc4MTM5NDMyNCwicm9sIjoiVVNFUiJ9.O9T8yi4AkuVrjWvr-CpCltRJe4SVsqeHi2acBhMv5Bo",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/empleados/5",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "empleados",
+                "5"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "eliminar empleado",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJLcmFrZURldkJhY2tlbmQiLCJzdWIiOiJXaWxseXJleDIzMDUiLCJpYXQiOjE3ODEzOTI1MjQsImV4cCI6MTc4MTM5NDMyNCwicm9sIjoiVVNFUiJ9.O9T8yi4AkuVrjWvr-CpCltRJe4SVsqeHi2acBhMv5Bo",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/empleados/5",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "empleados",
+                "5"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Tareas",
+      "item": [
+        {
+          "name": "post tareas",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJLcmFrZURldkJhY2tlbmQiLCJzdWIiOiJXaWxseXJleDIzMDUiLCJpYXQiOjE3ODEzOTI1MjQsImV4cCI6MTc4MTM5NDMyNCwicm9sIjoiVVNFUiJ9.O9T8yi4AkuVrjWvr-CpCltRJe4SVsqeHi2acBhMv5Bo",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"descripcion\": \"Diseñar e implementar el modelo de datos para la base de datos3\",\r\n    \"fechaLimite\": \"2026-06-15\",\r\n    \"costoEstimado\": 450.50,\r\n    \"proyecto\": {\r\n        \"id\": 1\r\n        },\r\n    \"empleados\": [\r\n                    {\r\n                        \"id\": 2\r\n                    }\r\n                ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/tareas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "tareas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "actualizar tareas",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJLcmFrZURldkJhY2tlbmQiLCJzdWIiOiJXaWxseXJleDIzMDUiLCJpYXQiOjE3ODEzOTI1MjQsImV4cCI6MTc4MTM5NDMyNCwicm9sIjoiVVNFUiJ9.O9T8yi4AkuVrjWvr-CpCltRJe4SVsqeHi2acBhMv5Bo",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"descripcion\": \"Diseñar e implementar el modelo de datos para la base de datos . modificado2\",\r\n    \"fechaLimite\": \"2026-06-17\",\r\n    \"costoEstimado\": 1450.5,\r\n    \"proyecto\": {\r\n        \"id\": 2\r\n    },\r\n    \"empleados\": [\r\n        {\r\n            \"id\": 2\r\n        }\r\n    ]\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/tareas/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "tareas",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get tareas",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJLcmFrZURldkJhY2tlbmQiLCJzdWIiOiJXaWxseXJleDIzMDUiLCJpYXQiOjE3ODEzOTI1MjQsImV4cCI6MTc4MTM5NDMyNCwicm9sIjoiVVNFUiJ9.O9T8yi4AkuVrjWvr-CpCltRJe4SVsqeHi2acBhMv5Bo",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/tareas",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "tareas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get tareas por id",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJLcmFrZURldkJhY2tlbmQiLCJzdWIiOiJXaWxseXJleDIzMDUiLCJpYXQiOjE3ODEzOTI1MjQsImV4cCI6MTc4MTM5NDMyNCwicm9sIjoiVVNFUiJ9.O9T8yi4AkuVrjWvr-CpCltRJe4SVsqeHi2acBhMv5Bo",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"nombre\": \"Diana Rojas\",\r\n    \"cargo\": \"Desarrollador Senior\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/tareas/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "tareas",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "eliminar tareas",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJLcmFrZURldkJhY2tlbmQiLCJzdWIiOiJXaWxseXJleDIzMDUiLCJpYXQiOjE3ODEzOTI1MjQsImV4cCI6MTc4MTM5NDMyNCwicm9sIjoiVVNFUiJ9.O9T8yi4AkuVrjWvr-CpCltRJe4SVsqeHi2acBhMv5Bo",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/tareas/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "tareas",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Registrar usuario",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\": \"Willyrex2305\",\r\n    \"password\": \"2016WillyWonka\",\r\n    \"rol\": \"USER\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/auth/registrar",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "auth",
+            "registrar"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\": \"Willyrex2305\",\r\n    \"password\": \"2016WillyWonka\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Logout",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"username\": \"Willyrex2305\",\r\n    \"password\": \"2016WillyWonka\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Ver Perfil",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJLcmFrZURldkJhY2tlbmQiLCJzdWIiOiJXaWxseXJleDIzMDUiLCJpYXQiOjE3ODEzOTI1MjQsImV4cCI6MTc4MTM5NDMyNCwicm9sIjoiVVNFUiJ9.O9T8yi4AkuVrjWvr-CpCltRJe4SVsqeHi2acBhMv5Bo",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/auth/perfil",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "auth",
+            "perfil"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
